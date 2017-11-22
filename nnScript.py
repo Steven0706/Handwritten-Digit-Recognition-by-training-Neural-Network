@@ -19,9 +19,7 @@ def initializeWeights(n_in,n_out):
     
     epsilon = sqrt(6) / sqrt(n_in + n_out + 1);
     W = (np.random.rand(n_out, n_in + 1)*2* epsilon) - epsilon;
-    return W
-    
-    
+    return W    
     
 def sigmoid(z):
     
@@ -29,8 +27,6 @@ def sigmoid(z):
     # return the sigmoid of input z"""
     sigmoid_result = 1.0 / (1.0 + np.exp(-1.0 * z));
     return  sigmoid_result
-    
-    
 
 def preprocess():
     """ Input:
@@ -93,7 +89,6 @@ def preprocess():
     data_train = data_train / 255
     data_val = data_val / 255
 
-    
     #Your code here
     train_data = data_train
     train_label = trn_lab
@@ -314,5 +309,5 @@ total_Time = time.time() - start_Time
 
 pickle.dump((n_hidden, w1, w2, lambdaval), open('params.pickle', 'wb'))
 pickle_data = pickle.load(open('params.pickle','rb'))
-print pickle_data
-print total_Time
+#print pickle_data
+#print total_Time
